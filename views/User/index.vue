@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    name: 'HoMe',
+    name: 'UsEr',
     data () {
         return {
 
