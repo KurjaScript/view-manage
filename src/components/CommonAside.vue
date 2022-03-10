@@ -4,14 +4,13 @@
             <i :class="'el-icon-' + item.icon"></i>
             <span slot="title">{{item.label}}</span>
         </el-menu-item>
-        <el-submenu index="1">
+        <el-submenu v-for="item in hasChildren" :index="item.path" :key="item.path">
             <template slot="title">
-                <i class="el-icon-location"></i>
-                <span slot="title">导航一</span>
+                <i :class="'el-icon-' + item.icon"></i>
+                <span slot="title">{{item.label}}</span>
             </template>
-            <el-menu-item-group>
-                <span slot="title">分组一</span>
-                <el-menu-item index="1-1">选项1</el-menu-item>
+            <el-menu-item-group v-for="(subItem, subIndex) in item.children" :key="subItem.path">
+                <el-menu-item :index="subIndex">{{subItem.label}}</el-menu-item>
             </el-menu-item-group>
         </el-submenu>
     </el-menu>
