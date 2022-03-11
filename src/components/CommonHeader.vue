@@ -27,3 +27,25 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+    header {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .l-content {
+        display: flex;
+        align-items: center;
+        .el-button {
+            margin-right: 20px;
+        }
+    }
+    .r-content {
+        .user {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+</style>
