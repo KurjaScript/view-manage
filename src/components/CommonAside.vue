@@ -21,7 +21,6 @@
   export default {
     data() {
       return {
-        isCollapse: false,
         menu: [
                 {
                     path: '/',
@@ -77,11 +76,14 @@
       }
     },
     computed: {
-        noChildren(){
+        noChildren() {
             return this.menu.filter(item => !item.children)
         },
-        hasChildren(){
+        hasChildren() {
             return this.menu.filter(item => item.children)
+        },
+        isCollapse() {
+            return this.$store.state.tab.isCollapse
         }
 
     }
