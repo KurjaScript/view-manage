@@ -1,6 +1,6 @@
 <template>
     <el-row class="home" :getter="20">
-        <el-row :span="8" style="margin-top: 20px">
+        <el-col :span="8" style="margin-top: 20px">
             <el-card shadow="hover">
                 <div class="user">
                     <img :src="userImg" />
@@ -14,7 +14,7 @@
                     <p>上次登录地点:<span>南京</span></p>
                 </div>
             </el-card>
-        </el-row>
+        </el-col>
     </el-row>
 </template>
 <script>
