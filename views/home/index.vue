@@ -26,6 +26,17 @@
                 </el-table>
             </el-card>
         </el-col>
+        <el-col style="margin-top: 20px" :span="16">
+            <div class="num">
+                <el-card v-for="item in countData" :key="item.name" :body-style="{display:'flex', padding: 0}">
+                    <i class="icon" :class="`el-icon-${item.icon}`" :style="{background: item.color}"></i>
+                    <div class="detail">
+                        <p class="num">￥{{item.value}}</p>
+                        <p class="txt">{{item.name}}</p>
+                    </div>
+                </el-card>
+            </div>
+        </el-col>
     </el-row>
 </template>
 <script>
@@ -67,12 +78,46 @@ export default {
                     totalBuy: 1200,
                 },
             ],
+           
             tableLabel: {
                 name: '手机',
                 todayBuy: '今日购买',
                 monthBuy: '本月购买',
                 totalBuy: '总购买'
-            }
+            },
+            countData: [
+                {
+                    name: "今日订单",
+                    value: 1234,
+                    icon: "success",
+                    color: "#2ec7c9",
+                },{
+                    name: "今日收藏订单",
+                    value: 210,
+                    icon: "star-on",
+                    color: "#ffb980",
+                },{
+                    name: "今日未支付订单",
+                    value: 1234,
+                    icon: "s-goods",
+                    color: "#5ab1ef",
+                },{
+                    name: "本月支付订单",
+                    value: 1234,
+                    icon: "success",
+                    color: "#2ec7c9"
+                },{
+                    name: "本月收藏订单",
+                    value: 210,
+                    icon: "star-on",
+                    color: "#ffb980",
+                },{
+                    name: "本月未支付订单",
+                    value: 1234,
+                    icon: "s-goods",
+                    color: "#5ab1ef",
+                }, 
+            ],
         }
     }
 }
