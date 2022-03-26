@@ -5,10 +5,11 @@ import App from './App.vue'
 import router from '../router'
 import './assets/less/index.less'
 import store from '../store'
-
+import http from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+Vue.prototype.$http = http
 
 new Vue({
   store,
