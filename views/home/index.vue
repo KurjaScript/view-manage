@@ -144,19 +144,21 @@ export default {
                         data: order.data.map(item => item[key]),
                         type: 'line'
                     })
-                    const option = {
-                        xAxis: {
-                            data: xData
-                        },
-                        yAxis: {},
-                        legend: {
-                            data: keyArray
-                        },
-                        series
-                    }
-                    const E = echarts.init(this.$refs.echarts)
-                    E.setOption(option)
                 })
+
+                const option = {
+                    xAxis: {
+                        data: xData
+                    },
+                    yAxis: {},
+                    legend: {
+                        data: keyArray
+                    },
+                    series
+                }
+
+                const E = echarts.init(this.$refs.echarts)
+                E.setOption(option)    
             }
             console.log(res)
         })
