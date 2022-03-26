@@ -74,11 +74,7 @@ export default {
                         date: '周日',
                         new: 33,
                         active: 170
-                    },{
-                        date: '周一',
-                        new: 5,
-                        active: 500
-                    },
+                    }
                 ],
                 // 折线图
                 orderData: {
