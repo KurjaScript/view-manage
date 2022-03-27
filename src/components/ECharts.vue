@@ -14,13 +14,14 @@ export default ({
             default() {
                 return {
                     xData: [],
-                    series
+                    series: []
                 }
             }
         }
     },
     data() {
         return {
+            // 折线图、柱状图
             axisOption: {
                 // 图例文字颜色
                 textStyle: {
@@ -86,7 +87,7 @@ export default ({
     },
     watch: {
         chartData: {
-            handle: function() {
+            handler: function() {
                 this.initChart()
             },
             deep: true
@@ -94,7 +95,7 @@ export default ({
     },
     methods: {
         initChart() {
-            this.initChartData
+            this.initChartData()
             if (this.echart) {
                 this.echart.setOption(this.options)
             } else {
@@ -104,7 +105,7 @@ export default ({
         },
         initChartData() {
             if (this.isAxisChart) {
-                this.axisOption.xAxis.data = chartData.xData
+                this.axisOption.xAxis.data = this.chartData.xData
                 this.axisOption.series = this.chartData.series
             } else {
                 this.normalOption.series = this.chartData.series
