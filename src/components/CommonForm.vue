@@ -41,7 +41,9 @@ export default {
         inline: Boolean, // 表单的布局
     },
     data() {
-
+        return {
+           
+        }
     }
 }
 </script>
