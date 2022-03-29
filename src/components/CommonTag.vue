@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'CommonTag',
@@ -26,14 +26,30 @@ export default {
     computed: {
         ...mapState({
             tags: state => state.tab.tabsList
-        })
+        }),
     },
     methods: {
+        ...mapMutations({
+            close: 'closeTag'
+        }),
         changeMenu(item){
             this.$router.push(item.name)
         },
-        handleClose(){
-
+        handleClose(tag, index){
+            const length = this.tags.length - 1;
+            this.close(tag)
+            if (tag.name !== this.$route.name) {
+                return
+            }
+            if (index === length) {
+                this.$router.push({
+                    name: this.tags[index - 1].name
+                })
+            } else {
+                this.$router.push({
+                    name: this.tags[index].name
+                })
+            }
         }
     },
 }
