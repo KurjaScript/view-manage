@@ -38,3 +38,12 @@ export default {
     },
 }
 </script>
+<style lang="less" scoped>
+.tabs {
+    padding: 20px;
+    .el-tag {
+        margin-right: 15px;
+        cursor: pointer;
+    }
+}
+</style>
