@@ -29,8 +29,8 @@ export default {
         })
     },
     methods: {
-        changeMenu(){
-
+        changeMenu(item){
+            this.$router.push(item.name)
         },
         handleClose(){
 
