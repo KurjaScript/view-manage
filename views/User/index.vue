@@ -112,3 +112,12 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+    
+    .manage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+</style>
