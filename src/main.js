@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui';
+import ElementUI, { Message, MessageBox } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
 import router from '../router'
@@ -10,7 +10,9 @@ import '../api/mock.js'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.prototype.$http = http
+Vue.prototype.$http = http;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$message = Message
 
 new Vue({
   store,
