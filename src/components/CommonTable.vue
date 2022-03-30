@@ -55,7 +55,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .common-table {
-    height: calc(100% -62px);
+    height: 600px;
     background: #fff;
     position: relative;
     .pager {

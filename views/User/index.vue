@@ -39,7 +39,7 @@
 <script>
 import CommonForm from '../../src/components/CommonForm.vue';
 import CommonTable from '../../src/components/CommonTable.vue';
-import {getUser} from  '../../api/data'
+import {getUser} from  '../../api/data';
 export default {
     name: 'UsEr',
     components: {
@@ -168,7 +168,7 @@ export default {
                     item.sexLabel = item.sex === 0 ? "女" : "男"
                     return item
                 })
-                this.config.total = res.count
+                this.config.total = res.data.count
                 this.config.loading = false
             })
         },
@@ -178,7 +178,7 @@ export default {
             this.isShow = true
             this.operateForm = row
         },
-        delUser() {
+        delUser(row) {
             this.$confirm("此操作将永久删除该文件，是否继续？", "提示", {
                 confirmButtonText: "确认",
                 cancelButtonText: "取消",
