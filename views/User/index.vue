@@ -50,7 +50,7 @@ export default {
                     label: '年龄',
                     type: 'input',
                 },{
-                    model: 'gender',
+                    model: 'sex',
                     label: '性别',
                     type: 'select',
                     opts: [
@@ -77,7 +77,7 @@ export default {
                 addr: '',
                 age: '',
                 birth: '',
-                gender: '',
+                sex: '',
             },
             formLabel: [
                 {
@@ -113,7 +113,7 @@ export default {
                 addr: '',
                 age: '',
                 birth: '',
-                gender: '',
+                sex: '',
             };
         },
         getList(){
