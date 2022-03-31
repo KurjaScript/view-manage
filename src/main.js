@@ -14,6 +14,17 @@ Vue.prototype.$http = http;
 Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$message = Message
 
+router.beforeEach((to, from, next) => {
+  store.commit('getToken')
+  const token = store.state.user.token
+  // 如果token不存在，并且当前页不是登录页，就不能进入系统并返回登录页
+  if (!token && to.name !== 'login') {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
+
 new Vue({
   store,
   router,
