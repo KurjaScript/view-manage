@@ -41,6 +41,7 @@
 </template>
 <script>
 import Mock from 'mockjs'
+import { getMenu } from '../../api/data'
 export default {
     name: 'LoGin',
     data () {
@@ -74,6 +75,13 @@ export default {
     },
     methods: {
         login() {
+            getMenu(this.form).then(res => {
+                if(res.data === 20000) {
+                    
+                } else {
+                    this.$message.warning(res.data.message)
+                }
+            })
             const token = Mock.random.guid()
             this.$store.commit('setToken', token)
             this.$router.push({ name: 'home' })

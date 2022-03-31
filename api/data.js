@@ -1,5 +1,6 @@
 import axios from './axios'
 
+// 定义接口请求（permission是之前定义好的）
 export const getMenu = (param) => {
     return axios.request({
         url: '/permission/getMenu',
